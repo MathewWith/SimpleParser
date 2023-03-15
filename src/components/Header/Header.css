@@ -1,0 +1,45 @@
+.app .app_head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 1% 11% 1% 10%;
+  }
+  
+  .link-button_back {
+    background: #fff;
+    color: rgba(0,0,0,.87);
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    padding: 7px 20px;
+    visibility: hidden;
+  }
+  
+  .link-button_back.visible {
+    visibility: visible;
+  }
+  
+  .link-button {
+    background: linear-gradient(230.09deg,#50e20c,#14b9ed 92.55%);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-left: 10px;
+  }
+  
+  .link-button.disabled {
+    background: linear-gradient(230.09deg,rgba(80,226,12,.12),rgba(20,185,237,.12) 92.55%);
+    color: rgba(0,0,0,.26);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    pointer-events: none;
+  }
+  
+  .link-title {
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 22px;
+  }

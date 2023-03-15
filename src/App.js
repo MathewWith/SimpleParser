@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, createContext } from "react";
+import "./App.css";
+import { Header } from "./components/Header/Header";
+import { Router } from "./components/Route";
+
+const isTextArea = {
+  isTextArea: null,
+  setIsTextArea: function (value) {
+    isTextArea.isTextArea = value;
+  },
+};
+
+export const TextAreaContext = createContext(isTextArea);
 
 function App() {
+  const [fileContent, setFileContent] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TextAreaContext.Provider value={isTextArea}>
+      <div className="app">
+        <Header fileContent={fileContent} setFileContent={setFileContent} />
+        <div className="app_content">
+          <Router fileContent={fileContent} setFileContent={setFileContent} />
+        </div>
+      </div>
+    </TextAreaContext.Provider>
   );
 }
 
